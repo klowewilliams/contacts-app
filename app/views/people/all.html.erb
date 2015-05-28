@@ -1,0 +1,10 @@
+<h1> Personal Contact List</h1>
+
+<% @names.each do |name| %>
+<h3> <%= name.name %> </h3>
+<h3> <%= name.email_address %></h3>
+<h3> <%= name.mailing_address %></h3>
+<h3> <%= name.mobile_number %></h3>
+<h3> <%= name.notes %></h3>
+<br>
+<% end %>
