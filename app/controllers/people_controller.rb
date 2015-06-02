@@ -1,11 +1,17 @@
 class PeopleController < ApplicationController
 
-  def contacts
+  def contact
     @name = Person.first
   end
 
-  def all
+  def index
     @names = Person.all
+  end
+
+  def new
+  end
+
+  def create
   end
 
 end
