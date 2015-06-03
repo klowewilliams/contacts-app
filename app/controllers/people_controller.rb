@@ -28,6 +28,7 @@ class PeopleController < ApplicationController
     contact_id = params[:id]
     @name = Person.find_by(id: contact_id)
     @name.update(name: params[:name], email_address: params[:email_address], mailing_address: params[:mailing_address], mobile_number: params[:mobile_number], notes: params[:notes])
+    redirect_to "/contacts/#{contact_id}"
   end
 
   def destroy
