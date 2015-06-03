@@ -1,0 +1,18 @@
+<h2>Single Contact View</h2>
+
+  <h2><%= @name.name %>
+<br>
+<%= @name.email_address %>
+<br>
+<%= @name.mailing_address %>
+<br>
+<%= @name.mobile_number %>
+<br>
+<%= @name.notes %>
+</h2>
+
+<%= link_to "Edit this contact", "/contacts/#{@name.id}/edit" %>
+
+</br>
+
+<%= link_to "Delete this contact", "/contacts/#{@name.id}", method: :delete %>

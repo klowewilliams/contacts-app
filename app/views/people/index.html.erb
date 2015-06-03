@@ -1,5 +1,7 @@
 <h1> Personal Contact List</h1>
 
+<%= link_to "Add new contact", "/contacts/new" %>
+
 <% @names.each do |name| %>
 <h3> <%= name.name %> </h3>
 <h3> <%= name.email_address %></h3>
