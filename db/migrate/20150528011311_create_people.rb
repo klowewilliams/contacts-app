@@ -5,7 +5,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :email_address
       t.string :mailing_address
       t.string :mobile_number
-      t.string :notes
+      t.string :bio
 
       t.timestamps null: false
     end

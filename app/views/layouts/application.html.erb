@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>ContactsApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container-fluid">
+
+  <%= form_tag '/search', method: :post do %>
+  <%= label_tag :search %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search" %>
+  <% end %>
 
 <%= yield %>
-
+</div>
 </body>
 </html>

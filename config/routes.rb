@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get "/contacts/:id/edit" => 'people#edit'
   get "/contacts/:id" => 'people#show'
   patch "contacts/:id" => 'people#update'
-
   delete "contacts/:id" => 'people#destroy'
-
+  post "/search" => 'people#search'
 end
