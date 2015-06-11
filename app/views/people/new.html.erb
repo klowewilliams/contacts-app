@@ -1,5 +1,7 @@
 <h2>Create a new  contact</h2>
 
+<h4> This contact is being created by <%= current_user.email %>
+
 <%= form_tag '/contacts', method: :post do %>
   <div>
   <%= label_tag :"Full Name" %>

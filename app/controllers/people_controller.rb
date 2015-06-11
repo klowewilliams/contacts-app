@@ -1,11 +1,16 @@
 class PeopleController < ApplicationController
 
   def contact
-    @name = Person.first
+      @name = Person.first
   end
 
   def index
-    @names = Person.all
+    if user_signed_in?
+     @names = current_user.people
+     else
+      flash[:info] = "Please sign in to see or create a contact."
+      redirect_to "/users/sign_in"
+    end
   end
 
   def new
@@ -13,7 +18,7 @@ class PeopleController < ApplicationController
 
   def create
     coordinates = Geocoder.coordinates(params[:address])
-    Person.create(name: params[:name], middle_name: params[:middle_name], email_address: params[:email_address],   mobile_number: params[:mobile_number], bio: params[:bio], latitude: coordinates[0], longtitude: coordinates[1])
+    Person.create(name: params[:name], middle_name: params[:middle_name], email_address: params[:email_address], mobile_number: params[:mobile_number], bio: params[:bio], latitude: coordinates[0], longtitude: coordinates[1], user_id: current_user.id)
   end
 
   def show

@@ -6,14 +6,16 @@
 <br>
 <%= @name.email_address %>
 <br>
-<%= @name.mailing_address %>
-<br>
+
 <%= @name.jpn_prefix_number %>
 <br>
 <%= @name.bio %>
 </h2>
 
 <h4> Last updated: <%= @name.friendly_updated_at %></h4>
+<h4> By: <%= @name.user.email %></h4>
+
+</br>
 
 <%= link_to "Edit this contact", "/contacts/#{@name.id}/edit" %>
 
